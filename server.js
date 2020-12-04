@@ -23,7 +23,7 @@ connection.once("open", () => {
 
 const idx = require("./routes/routes.index");
 
-app.use("/api/v1", [idx.stat_types]);
+app.use("/api/v1", [idx.stat_types, idx.runes]);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
