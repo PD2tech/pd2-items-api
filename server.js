@@ -23,7 +23,13 @@ connection.once("open", () => {
 
 const idx = require("./routes/routes.index");
 
-app.use("/api/v1", [idx.stat_types, idx.runes]);
+// app.use("/v1", []);
+app.use("/v1/items", [
+  idx.item_stats,
+  idx.runes,
+  idx.armorTypes,
+  idx.weaponTypes,
+]);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);

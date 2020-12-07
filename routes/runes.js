@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Rune = require("../models/runes.model");
 
-router.get("/items/runes", async (req, res) => {
+router.get("/runes", async (req, res) => {
   try {
     const runes = await Rune.find({}, "-_id");
     res.status(200).json(runes);

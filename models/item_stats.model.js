@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const StatTypesSchema = new Schema({
+const ItemStatSchema = new Schema({
   code: { type: String, required: true },
   name: { type: String, required: true },
   stat1: { type: String, required: true },
@@ -14,6 +14,6 @@ const StatTypesSchema = new Schema({
   stat8: { type: String, required: false },
 });
 
-const StatType = mongoose.model("stat_types", StatTypesSchema);
+const ItemStat = mongoose.model("item_stats", ItemStatSchema);
 
-module.exports = StatType;
+module.exports = ItemStat;

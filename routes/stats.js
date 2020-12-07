@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const Stat_Type = require("../models/stat_types.model");
+const Item_Stat = require("../models/item_stats.model");
 
-router.get("/items/stat-types", async (req, res) => {
+router.get("/stats/all-stats", async (req, res) => {
   try {
-    const stat_types = await Stat_Type.find({}, "-_id");
-    res.status(200).json(stat_types);
+    const item_stats = await Item_Stat.find({}, "-_id");
+    res.status(200).json(item_stats);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
